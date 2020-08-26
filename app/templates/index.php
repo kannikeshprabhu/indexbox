@@ -1,6 +1,9 @@
 {% include 'header.html' %}
 
-             <div class="block md:flex justify-between items-center px-4 text-center">
+<?php 
+      $search=$_POST['search'];
+
+            echo '<div class="block md:flex justify-between items-center px-4 text-center">
                 <div class="my-2 block md:flex items-center justify-center md:justify-start text-2xl md:text-right font-bold text-blue-500">
                     <img class="mx-auto md:ml-0 md:mr-1 my-2 w-16 h-16 rounded-full bg-black outline-none" src="{{logo}}">
                     <h1> {{name}} </h1>
@@ -8,8 +11,8 @@
                 
                 <div class="my-2">
                     <form class="">
-                        <input class="border rounded-full px-4 py-2 border-indigo-500 placeholder-indigo-500 text-indigo-500 outline-none" type="text" name="search" value="<?php $_POST['search']; ?>" placeholder="search...">
-                    </form>
+                        <input class="border rounded-full px-4 py-2 border-indigo-500 placeholder-indigo-500 text-indigo-500 outline-none" type="text" name="search" value="'.$search.'" placeholder="search...">
+                    </form>'; ?>
                 </div>
                 
             </div>
