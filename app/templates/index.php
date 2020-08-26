@@ -1,6 +1,6 @@
-{% include 'header.html' %}
-
 <?php 
+echo "{% include 'header.html' %}";
+
       $search=$_POST['search'];
 
             echo '<div class="block md:flex justify-between items-center px-4 text-center">
@@ -12,7 +12,7 @@
                 <div class="my-2">
                     <form class="">
                         <input class="border rounded-full px-4 py-2 border-indigo-500 placeholder-indigo-500 text-indigo-500 outline-none" type="text" name="search" value="'.$search.'" placeholder="search...">
-                    </form>'; ?>
+                    </form>
                 </div>
                 
             </div>
@@ -68,6 +68,7 @@
                     let date = new Date(dataDate);
                     item.innerHTML = date.toLocaleString()
                 });
-            </script>
+            </script>';
 
-{% include 'footer.html' %}
+echo "{% include 'footer.html' %}";
+?>
