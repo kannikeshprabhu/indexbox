@@ -1,0 +1,74 @@
+{% include 'header.html' %}
+
+<?php 
+
+			$search=$_POST['search'];
+            
+          echo '<div class="block md:flex justify-between items-center px-4 text-center">
+                <div class="my-2 block md:flex items-center justify-center md:justify-start text-2xl md:text-right font-bold text-blue-500">
+                    <img class="mx-auto md:ml-0 md:mr-1 my-2 w-16 h-16 rounded-full bg-black outline-none" src="{{logo}}">
+                    <h1> {{name}} </h1>
+                </div>
+                
+                <div class="my-2">
+                    <form class="">
+                        <input class="border rounded-full px-4 py-2 border-indigo-500 placeholder-indigo-500 text-indigo-500 outline-none" type="text" name="search" value="'.$search.'" placeholder="search...">' ?>
+                    </form>
+                </div>
+                
+            </div>
+
+            <div class="mx-auto my-2 w-full px-4">
+            
+                <table class="rounded text-left shadow-md w-full text-sm md:text-base">
+                    <thead>
+                        <tr class="border-t border-b bg-gray-200 border-gray-300 my-2 p-4">
+                            <th class="my-2 p-2 hidden md:table-cell">Media</th> 
+                            <th class="my-2 p-2 hidden md:table-cell">Type</th>
+                            <th class="my-2 p-2">Item description</th>
+                            <th class="my-2 p-2 hidden md:table-cell">DateTime</th>
+                            <th class="my-2 p-2 hidden md:table-cell">Size</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        {% for item in item_list %}
+                            <tr id="{{item.file_id}}" class="border-t border-b border-gray-300 my-4 p-4 rounded hover:bg-blue-100">
+                                <td class="my-2 p-2 hidden md:table-cell">{{item.media}}</td> 
+                                <td class="my-2 p-2 hidden md:table-cell">{{item.mime_type}}</td>
+                                <td class="my-2 p-2 rounded hover:text-blue-600 break-all"><a title="{{item.insight}}" href="{{item.url}}">{{item.insight}}</a></td>
+                                <td class="my-2 p-2 hidden md:table-cell" name="date" data-date="{{item.date}}"></td>
+                                <td class="my-2 p-2 hidden md:table-cell">{{item.size}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    
+                </table>
+            
+            </div>
+
+            <p class="my-2 text-center font-semibold">
+                {{item_list|length}} items
+            </p>
+            
+            <div class="mx-auto my-2 text-center flex text-white content-center justify-center">
+                {% if prev_page %}
+                    <a class="mx-2 p-2 border rounded bg-green-500 hover:border-green-500 hover:text-green-500 hover:bg-white" href="{{prev_page.url}}">Page {{prev_page.no}}</a>
+                {% endif %}
+                <p class="mx-2 p-2 border rounded border-green-500 text-green-500 hover:border-green-500 hover:text-green-500 hover:bg-white">Page {{cur_page}}</p>
+                {% if next_page %}
+                    <a class="mx-2 p-2 border rounded bg-green-500 hover:border-green-500 hover:text-green-500 hover:bg-white" href="{{next_page.url}}">Page {{next_page.no}}</a>
+                {% endif %}
+            </div>
+
+            <script>
+                const date_elements = document.getElementsByName('date');
+                date_elements.forEach((item) => {
+                    let dataDate = item.getAttribute("data-date");
+                    let date = new Date(dataDate);
+                    item.innerHTML = date.toLocaleString()
+                });
+            </script>
+
+{% include 'footer.html' %}
