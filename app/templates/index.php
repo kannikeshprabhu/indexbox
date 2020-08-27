@@ -1,7 +1,4 @@
-<?php 
-echo "{% include 'header.html' %}";
-
-      $search=$_POST['search'];
+{% include 'header.html' %}
 
             echo '<div class="block md:flex justify-between items-center px-4 text-center">
                 <div class="my-2 block md:flex items-center justify-center md:justify-start text-2xl md:text-right font-bold text-blue-500">
@@ -11,7 +8,7 @@ echo "{% include 'header.html' %}";
                 
                 <div class="my-2">
                     <form class="">
-                        <input class="border rounded-full px-4 py-2 border-indigo-500 placeholder-indigo-500 text-indigo-500 outline-none" type="text" name="search" value="'.$search.'" placeholder="search...">
+                        <input class="border rounded-full px-4 py-2 border-indigo-500 placeholder-indigo-500 text-indigo-500 outline-none" type="text" name="search" value="{% if search %}{{search}}{% endif %}" placeholder="search...">
                     </form>
                 </div>
                 
@@ -70,5 +67,4 @@ echo "{% include 'header.html' %}";
                 });
             </script>';
 
-echo "{% include 'footer.html' %}";
-?>
+{% include 'footer.html' %}
