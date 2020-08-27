@@ -32,7 +32,7 @@ class Views:
         return {'chats':chats}
 
 
-    @aiohttp_jinja2.template('index.php')
+    @aiohttp_jinja2.template('index.html')
     async def index(self, req):
         alias_id = req.rel_url.path.split('/')[1]
         chat = [i for i in chat_ids if i['alias_id'] == alias_id][0]
