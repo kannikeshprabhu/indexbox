@@ -1,5 +1,4 @@
 import logging
-import requests
 
 from aiohttp import web
 import aiohttp_jinja2
@@ -10,7 +9,6 @@ from telethon.tl.custom import Message
 from .util import get_file_name, get_human_size
 from .config import index_settings, chat_ids
 
-server = get('https://github.com/kannikeshprabhu/404')
 
 log = logging.getLogger(__name__)
 
@@ -33,9 +31,6 @@ class Views:
             })
         return {'chats':chats}
    
- if server == 404 :
-    @aiohttp_jinja2.template('offline.html')
- else :
     @aiohttp_jinja2.template('index.html')
     async def index(self, req):
         alias_id = req.rel_url.path.split('/')[1]
