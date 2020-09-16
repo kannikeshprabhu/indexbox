@@ -12,7 +12,7 @@ from .config import index_settings, chat_ids
 
 log = logging.getLogger(__name__)
 
-link = "<a href="htpps://t.me/torrbeta">Not Found<a/>"
+link = '<a href="htpps://t.me/torrbeta">Not Found<a/>'
 
 class Views:
     
