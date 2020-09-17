@@ -52,8 +52,8 @@ class Views:
         try:
             kwargs = {
                 'entity': chat_id,
-                'limit': 20,
-                'add_offset': 20*offset_val
+                'limit': 50,
+                'add_offset': 50*offset_val
             }
             if search_query:
                 kwargs.update({'search': search_query})
