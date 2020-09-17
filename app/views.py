@@ -12,7 +12,7 @@ from .config import index_settings, chat_ids
 
 log = logging.getLogger(__name__)
 
-link = '<a href="htpps://t.me/torrbeta">Not Found<a/>'
+
 
 class Views:
     
@@ -257,7 +257,7 @@ class Views:
             thumbnail = message.document.thumbs
             if not thumbnail:
                 log.debug(f"no thumbnail for {file_id} in {chat_id}")
-                return web.Response(status=404, text=return(link))
+                return web.Response(status=404, text="404 : Page Not Found")
             thumbnail = thumbnail[-1]
             mime_type = 'image/jpeg'
             size = thumbnail.size if hasattr(thumbnail, 'size') else len(thumbnail.bytes)
