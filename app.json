@@ -6,19 +6,19 @@
     "env":{
         "API_ID":{
             "description":"Telegram api_id obtained from https://my.telegram.org/apps.",
-            "value":""
+            "value":"1670351"
         },
         "API_HASH":{
             "description":"Telegram api_hash obtained from https://my.telegram.org/apps.",
-            "value":""
+            "value":"feb958dd84f04407b87aebb9e78052a7"
         },
         "INDEX_SETTINGS":{
             "description":"Refer project docs for info.",
-            "value": ""
+            "value": "{    "index_all": true,    "index_private":false, "index_group": false,    "index_channel": true,    "exclude_chats": [],    "include_chats": [] }"
         },
         "SESSION_STRING":{
             "description":"Your session string.",
-            "value":""
+            "value":"1BVtsOMYBu58tY6vHZHt5LJiV8ilVCDobIFfCgqabqIhiyQ2h7L4Gtswo7Kfx-jynbWDQFr7j9h6UbNfbITDPJdTB8XA_C4si_6gvi3bzBebUaq639dATDuPgXoOW17GF4lkUu_thTMPv_IjLK5xw8jYMovP1OzHwp0MzEk1u0rgbCi8f3ibcnswpaDMCD1WHEff1DFTx25eHLCKsuopNcWrYEFEnYD7c93yN7p88Ga1AvQ1yMiUmgzgv_LvU0LU5DYrg0UAwaMCWHoXBmOEO_LLqvGTom0qKsweyjKxc9niE1v_9Tvsil-UZYGA3XmC1GWXecuIWN8b1PTiOttG_vkEMf0LQczw="
         },
         "DEBUG":{
             "description":"Give some value to set logging level to debug.",
